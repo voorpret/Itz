@@ -52,6 +52,7 @@ final class NewsTableViewCell: UITableViewCell {
         
         representedId = nil
         
+        thumbnail.image = nil
         titleLabel.text = ""
         descriptionLabel.text = ""
     }
