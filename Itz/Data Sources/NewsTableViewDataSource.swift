@@ -3,6 +3,8 @@ import UIKit
 
 final class NewsTableViewDataSource: NSObject {
     
+    var didSelectNews: ((News) -> Void)?
+    
     private let httpClient = HTTPClient()
     
     private var models: [Model] = []
@@ -15,7 +17,7 @@ final class NewsTableViewDataSource: NSObject {
     
 }
 
-extension NewsTableViewDataSource: UITableViewDataSource {
+extension NewsTableViewDataSource: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
@@ -24,7 +26,7 @@ extension NewsTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.id, for: indexPath) as! NewsTableViewCell
         
-        cell.bind(title: models[indexPath.row].news.title, description: models[indexPath.row].news.description)
+        cell.bind(title: models[indexPath.row].news.title ?? "", description: models[indexPath.row].news.description ?? "")
         
         guard let imageURL = models[indexPath.row].news.imageURL else {
             return cell
@@ -46,6 +48,7 @@ extension NewsTableViewDataSource: UITableViewDataSource {
                 }
                 
                 this.models[indexPath.row].imageRequest = .fetched(image)
+                this.models[indexPath.row].news.image = image
                 if cell.representedId == id {
                     cell.bind(image: image)
                 }
@@ -59,6 +62,11 @@ extension NewsTableViewDataSource: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        didSelectNews?(models[indexPath.row].news)
+    }
+    
     
 }
 
@@ -67,7 +75,7 @@ extension NewsTableViewDataSource {
     private struct Model {
         
         let id = UUID()
-        let news: News
+        var news: News
         var imageRequest: ImageRequest = .notRequested
         
         init(news: News) {

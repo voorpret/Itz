@@ -6,6 +6,7 @@ final class NewsViewController: UIViewController {
     private let newsService: NewsService
     
     private var isNetworking = false
+    private var news: [News] = []
     private let tableView = NewsTableView()
     private let spinnerView = SpinnerView()
     
@@ -14,10 +15,10 @@ final class NewsViewController: UIViewController {
         self.newsService = newsService
         super.init(nibName: nil, bundle: nil)
         
+        tableView.newsDelegate = self
+        
         title = NSLocalizedString("News", comment: "Controller's title")
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchHeadlines))
-        
-        tableView.delegate = self
         
         fetchHeadlines()
     }
@@ -61,6 +62,7 @@ final class NewsViewController: UIViewController {
             
             switch result {
             case let .success(news):
+                this.news = news
                 this.tableView.bind(news)
             case let .failure(error):
                 print(error)
@@ -74,10 +76,10 @@ final class NewsViewController: UIViewController {
     
 }
 
-extension NewsViewController: UITableViewDelegate {
+extension NewsViewController: NewsTableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func didSelectNews(_ news: News) {
+        show(NewsDetailViewController(news: news), sender: nil)
     }
     
     

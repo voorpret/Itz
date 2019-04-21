@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarProxy.isTranslucent = false
         navBarProxy.barTintColor = .kBackground
         navBarProxy.shadowImage = UIImage()
-        navBarProxy.prefersLargeTitles = true
     }
 
 

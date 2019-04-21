@@ -3,13 +3,14 @@ import UIKit
 
 struct News: Codable {
     
-    let title: String
-    let description: String
-    let url: URL
-    let imageURLString: String
+    let title: String?
+    let description: String?
+    let url: URL?
+    let imageURLString: String?
     var imageURL: URL? {
-        return URL(string: imageURLString)
+        return imageURLString == nil ? nil : URL(string: imageURLString!)
     }
+    var image: UIImage?
     
     
 }

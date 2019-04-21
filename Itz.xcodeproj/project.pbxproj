@@ -13,6 +13,8 @@
 		49013F5D226C71C00046B6B1 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49013F5C226C71C00046B6B1 /* UILabel.swift */; };
 		49013F60226C735D0046B6B1 /* NewsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49013F5F226C735D0046B6B1 /* NewsTableViewDataSource.swift */; };
 		49013F62226C75FD0046B6B1 /* NewsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49013F61226C75FD0046B6B1 /* NewsTableView.swift */; };
+		49013F64226C9FF20046B6B1 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49013F63226C9FF20046B6B1 /* NewsDetailViewController.swift */; };
+		49013F66226CBC3E0046B6B1 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49013F65226CBC3E0046B6B1 /* UIButton.swift */; };
 		49B65566226B963400D8FC26 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B65565226B963400D8FC26 /* Result.swift */; };
 		49B65568226B966900D8FC26 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B65567226B966900D8FC26 /* UIView.swift */; };
 		49B6556A226B96A100D8FC26 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B65569226B96A100D8FC26 /* UIAlertController.swift */; };
@@ -54,6 +56,8 @@
 		49013F5C226C71C00046B6B1 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		49013F5F226C735D0046B6B1 /* NewsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewDataSource.swift; sourceTree = "<group>"; };
 		49013F61226C75FD0046B6B1 /* NewsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableView.swift; sourceTree = "<group>"; };
+		49013F63226C9FF20046B6B1 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		49013F65226CBC3E0046B6B1 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		49B65565226B963400D8FC26 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		49B65567226B966900D8FC26 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		49B65569226B96A100D8FC26 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				49B65569226B96A100D8FC26 /* UIAlertController.swift */,
 				49B6556B226B96DE00D8FC26 /* UITableViewCell.swift */,
 				49013F5C226C71C00046B6B1 /* UILabel.swift */,
+				49013F65226CBC3E0046B6B1 /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				49F2E1BA226B91E300243B16 /* RootViewController.swift */,
 				49013F55226C675B0046B6B1 /* NewsViewController.swift */,
+				49013F63226C9FF20046B6B1 /* NewsDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -375,6 +381,8 @@
 				49013F60226C735D0046B6B1 /* NewsTableViewDataSource.swift in Sources */,
 				49B6556F226B974A00D8FC26 /* HTTPClient.swift in Sources */,
 				49013F56226C675B0046B6B1 /* NewsViewController.swift in Sources */,
+				49013F66226CBC3E0046B6B1 /* UIButton.swift in Sources */,
+				49013F64226C9FF20046B6B1 /* NewsDetailViewController.swift in Sources */,
 				49B65573226B9A6400D8FC26 /* NewsService.swift in Sources */,
 				49B65579226B9B9400D8FC26 /* GoogleNews.swift in Sources */,
 				49F2E1B6226B919B00243B16 /* UIColor.swift in Sources */,
